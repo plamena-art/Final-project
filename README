@@ -1,0 +1,25 @@
+RA1. Create a software development requirement and planning document for your app.(include this file in one zip file with your source code files)
+RA2. Create a statement of purpose for your APP, including:
+	-What the application will do;
+	-What buisness problem it addresses;
+	-The target audience;
+RA3. Develop a list of features that will be included in the APP.
+RA4. Develop an implementation plan which details the steps and tasks required to implement your APP.
+RA5. Code(implement) all the features of your APP using a variety of Java programing constructs, but not limited:
+	-Variables;
+	-Conditional/control flow statements ( if/else, switch, etc)
+	-Loops;
+	-Class;
+	-Methods;
+	-Input/output;
+	-Error handling;
+RA6. Create an APP which runs without error and has the features consistent with the planning document.
+RA7. Use source control(GIT) throughout the development of the APP.
+	-Make regular commints ( a minimum of 15 ) Ensure a meaningful commit message that summarises the changes;(submit all code, source, dependencies files in one zip file)
+	-Optionally push the commits to a remote repository; ( submit a source control repository as a zip file)
+RA8. Use industry standart style and naming conventions for your JAVA code.
+RA9. Apply the DRY ( do not repeat yourself ) to all your code.
+RA10. Design, document and run a simple test on your APP.
+RA11. Present your APP to the audience.
+
+Optional: To help with your design and implementation you are strongly encouraged to create a diagram(s) which illustrates the workflow/control flow/logic of your APP. Include in your README file with an appropriate heading.
