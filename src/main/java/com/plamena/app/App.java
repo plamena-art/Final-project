@@ -7,6 +7,13 @@ public class App {
 
     public static void main(String[] args) {
 
+        //do not forget to create
+        // "Hey there!
+        // What is your name?
+        // How are you feeling today?"
+
+        //mood : happy, hungry, sad, silly, joyful
+
         Recipe happyRecipe = getHappyRecipe();
         Mood happy = new Mood(1, "happy", happyRecipe);
 
@@ -17,8 +24,35 @@ public class App {
         Mood sad = new Mood(3, "sad", sadRecipe);
 
         Recipe sillyRecipe = getSillyRecipe();
-        Mood Silly = new Mood(4,"silly", sillyRecipe);
+        Mood silly = new Mood(4,"silly", sillyRecipe);
 
+        Recipe joyfulRecipe = getJoyfulRecipe();
+        Mood joyful = new Mood (5,"joyful", joyfulRecipe);
+
+    }
+
+    private static Recipe getJoyfulRecipe() {
+        List ingredients = new ArrayList();
+        ingredients.add("435 ml milk/almond milk");
+        ingredients.add("1 large egg");
+        ingredients.add("1 ripe banana");
+        ingredients.add("60 g baby spinach");
+        ingredients.add("300g self-raising flour");
+        ingredients.add("55g coconut sugar");
+        ingredients.add("1/4 tsp bicarbonate of soda");
+        ingredients.add("20g butter, melted");
+        ingredients.add("coconut yoghurt, to serve");
+        ingredients.add("berries, to serve");
+
+        List methodSteps = new ArrayList();
+        methodSteps.add("Step 1: Blend the milk, egg, banana and spinach in a blender until smooth.");
+        methodSteps.add("Step 2: Combine the flour, sugar and bicarbonate of soda in a large bowl. Make a well in the centre. Add the milk mixture to the flour mixture and use a whisk to stir until a smooth batter forms. Cover with plastic wrap. Set aside for 30 mins to rest.");
+        methodSteps.add("Step 3: Heat a large non-stick frying pan over medium-low heat. Brush with a little melted butter. Pour ¼ cup (60ml) of the batter into the pan. Cook for 1-2 mins or until bubbles appear on the surface of the pancake. Turn and cook for a further 1 min or until light golden and cooked through. Transfer to a plate. Cover with foil to keep warm. Repeat with the remaining batter and melted butter to make 16 pancakes.");
+        methodSteps.add("Step 4: Divide the pancakes among serving plates. Top with yoghurt, papaya, mango and passionfruit.");
+        Recipe joyfulRecipe = new Recipe(1, "Green smoothie pancakes",
+                ingredients, methodSteps, "Calories Per Serving: 469kcal");
+        //total fat: 10g, Carbohydrates: 79g, protein: 14g
+        return joyfulRecipe;
     }
 
     private static Recipe getSillyRecipe() {
@@ -37,9 +71,10 @@ public class App {
         methodSteps.add("Beat the butter and brown sugar until smooth. Mix in the egg.Mix in the mample syrup and vanilla extract.Stir in the baking powder, salt, flour and walnuts.");
         methodSteps.add("Place on parchment paper lined baking sheets 1 1/2 inches apart. Bake until light golden brown, about 15 minutes.");
 
-        Recipe sadRecipe = new Recipe(1, "Walnut Maple Cookies",
-                ingredients, methodSteps, "Calories Per Serving: 390kcal");
-        return sadRecipe;
+        Recipe sillyRecipe = new Recipe(1, "Walnut Maple Cookies",
+                ingredients, methodSteps, "Calories Per Serving: 100kcal");
+        //total fat: 6g, Carbohydrates: 11g, protein: 1g
+        return sillyRecipe;
     }
 
     private static Recipe getsadRecipe() {
