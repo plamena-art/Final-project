@@ -8,14 +8,17 @@ public class App {
 
     public static void main(String[] args) {
 
-        //variables
+        //Declare variables:
         String mood = "";
         String name = "";
-        // if type something wrong then:
+
+        // error handling
         boolean error;
 
         //initiating mood variables
         Mood selectedMood = null;
+
+        //create a new scanner object instance
         Scanner scan = new Scanner(System.in);
 
 
@@ -34,9 +37,14 @@ public class App {
         Recipe joyfulRecipe = getJoyfulRecipe();
         Mood joyful = new Mood(5, "joyful", joyfulRecipe);
 
+
+        // Display(print out) to the console
         System.out.println("Hey there!");
         System.out.println("What is your name?");
+
+        //get input
         name = scan.next();
+        //get input from the user in the console
         System.out.println("Hi " + name + ", How are you feeling today?");
         System.out.println("Please, choose one of the options by typing it: happy, hungry, sad, silly or joyful");
 
@@ -70,6 +78,10 @@ public class App {
         } while (error == false);
 
         System.out.println("Based on your mood today I highly recommend you to have " + selectedMood.getRecipe().description);
+        System.out.println( name + " Would you like to know how to make the recipe?");
+
+        
+
 
     }
 
