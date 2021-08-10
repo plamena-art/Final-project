@@ -11,16 +11,32 @@ public class App {
         //Declare variables:
         String mood = "";
         String name = "";
+        String answer = "";
 
         // error handling
         boolean error;
+        boolean yn;
+
+        System.out.println("Yes/No");
+        while (true) {
+            Scanner in = null;
+            answer = in.nextLine().trim().toLowerCase();
+            if (answer.equals("yes")) {
+                yn = true;
+                break;
+            } else if (answer.equals("no")) {
+                yn = false;
+                break;
+            } else {
+                System.out.println("Please answer Yes/No");
+            }
+        }
 
         //initiating mood variables
         Mood selectedMood = null;
 
         //create a new scanner object instance
         Scanner scan = new Scanner(System.in);
-
 
         Recipe happyRecipe = getHappyRecipe();
         Mood happy = new Mood(1, "happy", happyRecipe);
@@ -79,10 +95,7 @@ public class App {
 
         System.out.println("Based on your mood today I highly recommend you to have " + selectedMood.getRecipe().description);
         System.out.println( name + " Would you like to know how to make the recipe?");
-
-        
-
-
+        //System.out.println("Yes/No");
     }
 
 
