@@ -2,17 +2,33 @@ package com.plamena.app;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class App {
 
     public static void main(String[] args) {
 
-        //do not forget to create
-        // "Hey there!
-        // What is your name?
-        // How are you feeling today?"
 
-        //mood : happy, hungry, sad, silly, joyful
+        String mood = "";
+        String name = "";
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Hey there!");
+        System.out.println("What is your name?");
+        name = scan.next();
+        System.out.println("Hi " + name + ", How are you feeling today?");
+        System.out.println( "Please, choose one of the options by typing it: happy, hungry, sad, silly or joyful");
+        mood = scan.next();
+
+        switch (mood.toLowerCase() {
+            case "happy":
+            case "hungry":
+            case "sad":
+            case "silly":
+            case "joyful":
+            default:
+                break;
+        }
+        
 
         Recipe happyRecipe = getHappyRecipe();
         Mood happy = new Mood(1, "happy", happyRecipe);
@@ -28,6 +44,7 @@ public class App {
 
         Recipe joyfulRecipe = getJoyfulRecipe();
         Mood joyful = new Mood (5,"joyful", joyfulRecipe);
+
 
     }
 
@@ -49,6 +66,7 @@ public class App {
         methodSteps.add("Step 2: Combine the flour, sugar and bicarbonate of soda in a large bowl. Make a well in the centre. Add the milk mixture to the flour mixture and use a whisk to stir until a smooth batter forms. Cover with plastic wrap. Set aside for 30 mins to rest.");
         methodSteps.add("Step 3: Heat a large non-stick frying pan over medium-low heat. Brush with a little melted butter. Pour ¼ cup (60ml) of the batter into the pan. Cook for 1-2 mins or until bubbles appear on the surface of the pancake. Turn and cook for a further 1 min or until light golden and cooked through. Transfer to a plate. Cover with foil to keep warm. Repeat with the remaining batter and melted butter to make 16 pancakes.");
         methodSteps.add("Step 4: Divide the pancakes among serving plates. Top with yoghurt, papaya, mango and passionfruit.");
+
         Recipe joyfulRecipe = new Recipe(1, "Green smoothie pancakes",
                 ingredients, methodSteps, "Calories Per Serving: 469kcal");
         //total fat: 10g, Carbohydrates: 79g, protein: 14g
@@ -145,3 +163,4 @@ public class App {
     }
 
 }
+
