@@ -11,9 +11,8 @@ public class App {
         //Declare variables:
         String mood = "";
         String name = "";
-        //Scanner in = null;
         String answer = "";
-
+        
         // error handling
         boolean error;
         boolean yn;
@@ -23,7 +22,6 @@ public class App {
 
         //create a new scanner object instance
         Scanner scan = new Scanner(System.in);
-
 
         // Display(print out) to the console
         System.out.println("Hey there!");
@@ -67,7 +65,6 @@ public class App {
             System.out.println("Sorry, I did not understand. Please type y or n.");
         }
         System.out.println("Thank you " + name + " for cooking and consuming healthy food. Enjoy your day.");
-
 
     }
 
