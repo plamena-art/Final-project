@@ -24,6 +24,42 @@ public class App {
         //create a new scanner object instance
         Scanner scan = new Scanner(System.in);
 
+
+        // Display(print out) to the console
+        System.out.println("Hey there!");
+        System.out.println("What is your name?");
+
+        //get input
+        name = scan.next();
+        //get input from the user in the console
+        System.out.println("Hi " + name + ", How are you feeling today?");
+        System.out.println("Please, choose one of the options by typing it: happy, hungry, sad, silly or joyful");
+
+        do {
+            mood = scan.next();
+
+            selectedMood = getSelectedMood(mood);
+
+        } while (selectedMood == null);
+
+        System.out.println("Based on your mood today I highly recommend you to have " + selectedMood.getRecipe().description);
+
+        System.out.println( name + " Would you like to know the ingredients for the recipe? Enter y or n.");
+
+        //trying something
+        answer = scan.next();
+        if (answer.equalsIgnoreCase("y")) {
+            System.out.println("Nice! Here you are " + selectedMood.recipe.getIngredients());
+        } else if (answer.equalsIgnoreCase("n")) {
+            System.out.println ("Ok, have a lovely day " + name);
+        } else {
+            System.out.println("Sorry, I did not understand. Please type y or n.");
+        }
+    }
+
+    public static Mood getSelectedMood(String mood) {
+        Mood selectedMood;
+
         Recipe happyRecipe = getHappyRecipe();
         Mood happy = new Mood(1, "happy", happyRecipe);
 
@@ -39,59 +75,29 @@ public class App {
         Recipe joyfulRecipe = getJoyfulRecipe();
         Mood joyful = new Mood(5, "joyful", joyfulRecipe);
 
-
-        // Display(print out) to the console
-        System.out.println("Hey there!");
-        System.out.println("What is your name?");
-
-        //get input
-        name = scan.next();
-        //get input from the user in the console
-        System.out.println("Hi " + name + ", How are you feeling today?");
-        System.out.println("Please, choose one of the options by typing it: happy, hungry, sad, silly or joyful");
-
-        do {
-            error = true;
-            mood = scan.next();
-
-            switch (mood.toLowerCase()) {
-                case "happy":
-                    selectedMood = happy;
-                    break;
-                case "hungry":
-                    selectedMood = hungry;
-                    break;
-                case "sad":
-                    selectedMood = sad;
-                    break;
-                case "silly":
-                    selectedMood = silly;
-                    break;
-                case "joyful":
-                    selectedMood = joyful;
-                    break;
-                default:
-                    error = false;
-                    System.out.println("Please type one of the following moods: happy, hungry, sad, silly or joyful!");
-                    break;
-            }
-
-        } while (error == false);
-
-        System.out.println("Based on your mood today I highly recommend you to have " + selectedMood.getRecipe().description);
-
-        System.out.println( name + " Would you like to know the ingredients for the recipe? Enter y or n.");
-        //testing something
-        answer = scan.next();
-        if (answer.equalsIgnoreCase("y")) {
-            System.out.println("Nice! Here you are " + selectedMood.recipe.getIngredients());
-        } else if (answer.equalsIgnoreCase("n")) {
-            System.out.println ("Ok, have a lovely day " + name);
-        } else {
-            System.out.println("Sorry, I did not understand. Please type y or n.");
+        switch (mood.toLowerCase()) {
+            case "happy":
+                selectedMood = happy;
+                break;
+            case "hungry":
+                selectedMood = hungry;
+                break;
+            case "sad":
+                selectedMood = sad;
+                break;
+            case "silly":
+                selectedMood = silly;
+                break;
+            case "joyful":
+                selectedMood = joyful;
+                break;
+            default:
+                selectedMood = null;
+                System.out.println("Please type one of the following moods: happy, hungry, sad, silly or joyful!");
+                break;
         }
+        return selectedMood;
     }
-
 
     private static Recipe getJoyfulRecipe() {
         List ingredients = new ArrayList();
@@ -188,7 +194,7 @@ public class App {
         return hungryRecipe;
     }
 
-    private static Recipe getHappyRecipe() {
+    public static Recipe getHappyRecipe() {
         List ingredients = new ArrayList();
         ingredients.add("1/4 cup almond flour");
         ingredients.add("2 tbsp cacao powder");
