@@ -55,6 +55,20 @@ public class App {
         } else {
             System.out.println("Sorry, I did not understand. Please type y or n.");
         }
+
+        System.out.println( name + " Would you like to know the method steps for the recipe? Enter y or n.");
+
+        answer = scan.next();
+        if (answer.equalsIgnoreCase("y")) {
+            System.out.println("Nice! Here you are " + selectedMood.recipe.getMethodSteps());
+        } else if (answer.equalsIgnoreCase("n")) {
+            System.out.println ("Ok, have a lovely day " + name);
+        } else {
+            System.out.println("Sorry, I did not understand. Please type y or n.");
+        }
+        System.out.println("Thank you " + name + " for cooking and consuming healthy food. Enjoy your day.");
+
+
     }
 
     public static Mood getSelectedMood(String mood) {
