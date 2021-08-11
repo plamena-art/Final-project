@@ -11,26 +11,12 @@ public class App {
         //Declare variables:
         String mood = "";
         String name = "";
+        //Scanner in = null;
         String answer = "";
 
         // error handling
         boolean error;
         boolean yn;
-
-        System.out.println("Yes/No");
-        while (true) {
-            Scanner in = null;
-            answer = in.nextLine().trim().toLowerCase();
-            if (answer.equals("yes")) {
-                yn = true;
-                break;
-            } else if (answer.equals("no")) {
-                yn = false;
-                break;
-            } else {
-                System.out.println("Please answer Yes/No");
-            }
-        }
 
         //initiating mood variables
         Mood selectedMood = null;
@@ -64,7 +50,6 @@ public class App {
         System.out.println("Hi " + name + ", How are you feeling today?");
         System.out.println("Please, choose one of the options by typing it: happy, hungry, sad, silly or joyful");
 
-
         do {
             error = true;
             mood = scan.next();
@@ -94,8 +79,17 @@ public class App {
         } while (error == false);
 
         System.out.println("Based on your mood today I highly recommend you to have " + selectedMood.getRecipe().description);
-        System.out.println( name + " Would you like to know how to make the recipe?");
-        //System.out.println("Yes/No");
+
+        System.out.println( name + " Would you like to know the ingredients for the recipe? Enter y or n.");
+        //testing something
+        answer = scan.next();
+        if (answer.equalsIgnoreCase("y")) {
+            System.out.println("Nice! Here you are " + selectedMood.recipe.getIngredients());
+        } else if (answer.equalsIgnoreCase("n")) {
+            System.out.println ("Ok, have a lovely day " + name);
+        } else {
+            System.out.println("Sorry, I did not understand. Please type y or n.");
+        }
     }
 
 
